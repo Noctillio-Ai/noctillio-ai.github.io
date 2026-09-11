@@ -1,6 +1,6 @@
-# Noctillio-Ai
+# NoctillioAi
 
-The site for **Noctillio-Ai** — an open-source community building tools for
+The site for **NoctillioAi** — an open-source community building tools for
 deep learning: image processing, video processing, model training, and VLM
 fine-tuning. Highlights [AutoTimm](https://theja-vanka.github.io/AutoTimm/)
 and [NightFlow](https://theja-vanka.github.io/NightFlow/).
@@ -26,9 +26,6 @@ Open [http://localhost:3000](http://localhost:3000).
   `public/apple-touch-icon.png`, `public/og-image.png`, `public/site.webmanifest`.
   Regenerate them from `assets/noctillio-ai.png` with the script noted in
   `assets/README.md` if the source logo changes.
-- **Leadership photo** — currently a placeholder initials avatar in
-  `src/app/about/page.tsx`. Drop a real headshot at `public/team/*.jpg` and
-  swap in an `<Image>` there once you have one.
 
 ## Build
 

@@ -18,7 +18,7 @@ export function Navbar() {
           <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
             <Image
               src="/logo/noctillio-mark-white.png"
-              alt="Noctillio-Ai owl mark"
+              alt="NoctillioAi owl mark"
               width={30}
               height={22}
               className="h-6 w-auto"

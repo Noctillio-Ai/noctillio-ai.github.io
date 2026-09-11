@@ -21,7 +21,7 @@ export default function Home() {
               <div className="animate-pulse-glow absolute inset-0 -z-10 rounded-full bg-accent/30 blur-3xl" />
               <Image
                 src="/logo/noctillio-mark-white.png"
-                alt="Noctillio-Ai owl mark"
+                alt="NoctillioAi owl mark"
                 width={140}
                 height={100}
                 className="h-24 w-auto sm:h-28"

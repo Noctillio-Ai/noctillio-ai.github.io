@@ -9,7 +9,7 @@ import { projects } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "AutoTimm and NightFlow — open-source tools for computer vision training and deep learning experiment management, built by Noctillio-Ai.",
+    "AutoTimm and NightFlow — open-source tools for computer vision training and deep learning experiment management, built by NoctillioAi.",
 };
 
 export default function ProjectsPage() {
@@ -30,7 +30,7 @@ export default function ProjectsPage() {
 
         <div className="mt-16 rounded-3xl border border-border bg-background-elevated p-10 text-center sm:p-14">
           <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-            Have an idea for the next Noctillio-Ai tool?
+            Have an idea for the next NoctillioAi tool?
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-muted">
             Video processing pipelines, VLM fine-tuning utilities, dataset tooling —
