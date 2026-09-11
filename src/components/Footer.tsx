@@ -6,7 +6,7 @@ import { GitHubIcon, LinkedInIcon, MailIcon } from "./icons";
 export function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="border-t border-border">
+    <footer className="border-t border-border bg-[#050609]">
       <div className="mx-auto max-w-6xl px-6 py-14">
         <div className="grid gap-10 md:grid-cols-[1.3fr_1fr_1fr_1fr]">
           <div>

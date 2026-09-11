@@ -55,8 +55,8 @@ export default function Home() {
       </section>
 
       {/* What / Why / Who strip */}
-      <section className="border-y border-border bg-background-elevated/40">
-        <Container className="grid gap-10 py-16 sm:grid-cols-3">
+      <section className="border-t border-border">
+        <Container className="grid gap-10 pt-16 pb-14 sm:grid-cols-3 sm:divide-x sm:divide-border">
           {[
             {
               title: "What we build",
@@ -80,7 +80,7 @@ export default function Home() {
               cta: "Get involved",
             },
           ].map((item) => (
-            <div key={item.title}>
+            <div key={item.title} className="sm:px-6 first:sm:pl-0 last:sm:pr-0">
               <h3 className="text-lg font-semibold">{item.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted">{item.body}</p>
               <Link
@@ -96,14 +96,14 @@ export default function Home() {
       </section>
 
       {/* Collaborator CTA */}
-      <section className="pt-20 pb-28 sm:pt-24">
+      <section className="pt-14 pb-28 sm:pt-16">
         <Container>
-          <div className="card-glow relative overflow-hidden rounded-3xl border border-border bg-background-elevated px-8 py-16 text-center sm:px-16">
+          <div className="card-glow surface-gradient relative overflow-hidden rounded-3xl border border-border px-8 py-16 text-center sm:px-16">
             <div className="animate-pulse-glow pointer-events-none absolute left-1/2 top-0 h-64 w-[36rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/25 blur-3xl" />
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="text-3xl font-semibold tracking-tight text-[color:var(--card-heading)] sm:text-4xl">
               Deep learning at night needs more hands.
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted">
+            <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[color:var(--card-body)]">
               Whether it&apos;s a new backbone, a bug fix, a UI polish, or docs —
               there&apos;s a good first issue with your name on it.
             </p>

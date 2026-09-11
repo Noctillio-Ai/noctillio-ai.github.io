@@ -77,16 +77,16 @@ export default function ContributePage() {
         </Container>
       </section>
 
-      <section className="border-y border-border bg-background-elevated/40 py-20">
+      <section className="border-y border-border py-20">
         <Container>
           <div className="grid gap-6 sm:grid-cols-2">
             {ways.map((w) => (
               <div
                 key={w.title}
-                className="card-glow rounded-2xl border border-border bg-background-elevated p-6"
+                className="card-glow surface-gradient rounded-2xl border border-border p-6"
               >
-                <h3 className="text-base font-semibold">{w.title}</h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-muted">{w.body}</p>
+                <h3 className="text-base font-semibold text-[color:var(--card-heading)]">{w.title}</h3>
+                <p className="mt-2.5 text-sm leading-relaxed text-[color:var(--card-body)]">{w.body}</p>
               </div>
             ))}
           </div>
@@ -108,7 +108,7 @@ export default function ContributePage() {
         </Container>
       </section>
 
-      <section className="border-t border-border bg-background-elevated/40 py-20">
+      <section className="border-t border-border py-20">
         <Container>
           <SectionHeading title="Jump straight into a repo" />
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
@@ -133,12 +133,12 @@ export default function ContributePage() {
 
       <section className="py-20">
         <Container>
-          <div className="card-glow relative overflow-hidden rounded-3xl border border-border bg-background-elevated px-8 py-14 text-center sm:px-16">
+          <div className="card-glow surface-gradient relative overflow-hidden rounded-3xl border border-border px-8 py-14 text-center sm:px-16">
             <div className="animate-pulse-glow pointer-events-none absolute left-1/2 top-0 h-64 w-[36rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/25 blur-3xl" />
-            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+            <h2 className="text-2xl font-semibold tracking-tight text-[color:var(--card-heading)] sm:text-3xl">
               Not sure where to start? Just say hi.
             </h2>
-            <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-muted">
+            <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-[color:var(--card-body)]">
               Reach out directly and we&apos;ll point you at something that fits
               what you&apos;re interested in.
             </p>

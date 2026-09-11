@@ -72,7 +72,7 @@ export default function AboutPage() {
       </section>
 
       {/* The name */}
-      <section className="border-y border-border bg-background-elevated/40 py-20">
+      <section className="border-y border-border py-20">
         <Container className="grid gap-12 md:grid-cols-[0.9fr_1.1fr] md:items-center">
           <div className="flex justify-center">
             <div className="relative">
@@ -114,10 +114,10 @@ export default function AboutPage() {
             {openSourceReasons.map((r) => (
               <div
                 key={r.title}
-                className="card-glow rounded-2xl border border-border bg-background-elevated p-6"
+                className="card-glow surface-gradient rounded-2xl border border-border p-6"
               >
-                <h3 className="text-base font-semibold">{r.title}</h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-muted">{r.body}</p>
+                <h3 className="text-base font-semibold text-[color:var(--card-heading)]">{r.title}</h3>
+                <p className="mt-2.5 text-sm leading-relaxed text-[color:var(--card-body)]">{r.body}</p>
               </div>
             ))}
           </div>
@@ -125,7 +125,7 @@ export default function AboutPage() {
       </section>
 
       {/* Why collaborators */}
-      <section className="border-t border-border bg-background-elevated/40 py-20">
+      <section className="border-t border-border py-20">
         <Container>
           <SectionHeading title="Why we're actively looking for collaborators" />
           <div className="mt-10 grid gap-6 sm:grid-cols-3">

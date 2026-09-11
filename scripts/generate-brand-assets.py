@@ -11,10 +11,10 @@ PROJECTS_DIR = PUBLIC / "projects"
 LOGO_DIR.mkdir(parents=True, exist_ok=True)
 PROJECTS_DIR.mkdir(parents=True, exist_ok=True)
 
-GRAPHITE_DEEP = (10, 11, 13)    # near-black graphite (matches --background)
-GRAPHITE_MID = (22, 27, 34)     # subtle cool graphite, for gradient depth
-ACCENT_BLUE = (59, 130, 246)    # accent (blue-500)
-ACCENT_BLUE_DEEP = (37, 99, 235) # accent-2 (blue-600)
+GRAPHITE_DEEP = (7, 8, 10)      # base surface (matches --background #07080A)
+GRAPHITE_MID = (20, 58, 138)    # lighter navy-blue (matches --background-elevated-2 #143A8A)
+ACCENT_BLUE = (95, 145, 251)    # accent, vibrant blue #5F91FB
+ACCENT_BLUE_DEEP = (8, 19, 87)  # accent-2, deep navy #081357
 
 FONT_DIR = Path("/System/Library/Fonts/Supplemental")
 SYS_FONT_DIR = Path("/System/Library/Fonts")
@@ -198,8 +198,8 @@ manifest = {
         {"src": "/icon-192.png", "sizes": "192x192", "type": "image/png"},
         {"src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
     ],
-    "theme_color": "#0a0b0d",
-    "background_color": "#0a0b0d",
+    "theme_color": "#07080a",
+    "background_color": "#07080a",
     "display": "standalone",
 }
 (PUBLIC / "site.webmanifest").write_text(json.dumps(manifest, indent=2) + "\n")

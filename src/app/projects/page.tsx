@@ -58,11 +58,11 @@ export default function ProjectsPage() {
           ))}
         </div>
 
-        <div className="mt-16 rounded-3xl border border-border bg-background-elevated p-10 text-center sm:p-14">
-          <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+        <div className="card-glow surface-gradient mt-16 rounded-3xl border border-border p-10 text-center sm:p-14">
+          <h2 className="text-2xl font-semibold tracking-tight text-[color:var(--card-heading)] sm:text-3xl">
             Have an idea for the next Noctillio AI tool?
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-muted">
+          <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-[color:var(--card-body)]">
             Video processing pipelines, VLM fine-tuning utilities, dataset tooling —
             if it removes friction from a deep learning workflow, we want to hear
             about it.
