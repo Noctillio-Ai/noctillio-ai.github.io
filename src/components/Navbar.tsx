@@ -60,7 +60,7 @@ export function Navbar() {
             </a>
             <Link
               href="/contribute"
-              className="rounded-full bg-gradient-to-r from-accent to-accent-2 px-4 py-2 text-sm font-medium text-white shadow-[0_0_20px_-6px_rgba(168,85,247,0.8)] transition-transform hover:-translate-y-0.5"
+              className="rounded-full bg-gradient-to-r from-accent to-accent-2 px-4 py-2 text-sm font-medium text-white shadow-[0_0_20px_-6px_rgba(37,99,235,0.85)] transition-transform hover:-translate-y-0.5"
             >
               Contribute
             </Link>

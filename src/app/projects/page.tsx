@@ -6,17 +6,47 @@ import { Button } from "@/components/Button";
 import { ArrowRightIcon } from "@/components/icons";
 import { projects } from "@/lib/site";
 
+const title = "Projects";
+const description =
+  "AutoTimm and NightFlow — open-source tools for computer vision training and deep learning experiment management, built by Noctillio AI.";
+
 export const metadata: Metadata = {
-  title: "Projects",
-  description:
-    "AutoTimm and NightFlow — open-source tools for computer vision training and deep learning experiment management, built by Noctillio AI.",
+  title,
+  description,
+  alternates: { canonical: "/projects/" },
+  openGraph: { title, description, url: "/projects/" },
+  twitter: { title, description },
+};
+
+const projectsJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  itemListElement: projects.map((project, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    item: {
+      "@type": "SoftwareApplication",
+      name: project.name,
+      description: project.description,
+      url: project.liveUrl,
+      codeRepository: project.repoUrl,
+      applicationCategory: "DeveloperApplication",
+      operatingSystem: project.tags.includes("Desktop App") ? "macOS, Linux" : "Cross-platform",
+      isAccessibleForFree: true,
+    },
+  })),
 };
 
 export default function ProjectsPage() {
   return (
     <section className="py-20 sm:py-28">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectsJsonLd) }}
+      />
       <Container>
         <SectionHeading
+          level="h1"
           eyebrow="Our projects"
           title="Tools we're building in the open"
           description="Every project here is real, actively maintained, and open for contributions. Start with an existing project, or bring an idea for the next one."

@@ -4,10 +4,16 @@ import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Button } from "@/components/Button";
 
+const title = "About";
+const description =
+  "What Noctillio AI stands for, why it's open source, and why the organization is looking for collaborators.";
+
 export const metadata: Metadata = {
-  title: "About",
-  description:
-    "What Noctillio AI stands for, why it's open source, and why the organization is looking for collaborators.",
+  title,
+  description,
+  alternates: { canonical: "/about/" },
+  openGraph: { title, description, url: "/about/" },
+  twitter: { title, description },
 };
 
 const openSourceReasons = [
@@ -57,6 +63,7 @@ export default function AboutPage() {
       <section className="pt-20 pb-16 sm:pt-28">
         <Container>
           <SectionHeading
+            level="h1"
             eyebrow="About Noctillio AI"
             title="Deep learning research happens at odd hours. We build for that."
             description="Noctillio AI is a free, open-source community building tools for deep learning — image processing, video processing, model training, and vision-language model fine-tuning."

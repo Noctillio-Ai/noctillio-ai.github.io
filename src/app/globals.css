@@ -1,20 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0713;
-  --background-elevated: #120b22;
-  --background-elevated-2: #170f2b;
-  --foreground: #f5f3fb;
-  --muted: #a9a0c4;
-  --muted-2: #7c7397;
-  --border: #241a3d;
-  --border-strong: #352654;
+  --background: #0a0b0d;
+  --background-elevated: #111318;
+  --background-elevated-2: #16191f;
+  --foreground: #f2f4f6;
+  --muted: #9aa3ad;
+  --muted-2: #6b7480;
+  --border: #1f232a;
+  --border-strong: #2b303a;
 
-  --accent: #a855f7;
-  --accent-2: #d946ef;
+  --accent: #3b82f6;
+  --accent-2: #2563eb;
   --accent-3: #60a5fa;
-  --accent-soft: rgba(168, 85, 247, 0.14);
-  --accent-glow: rgba(168, 85, 247, 0.45);
+  --accent-soft: rgba(59, 130, 246, 0.16);
+  --accent-glow: rgba(59, 130, 246, 0.5);
 }
 
 @theme inline {
@@ -48,7 +48,7 @@ body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
-/* Ambient night-sky backdrop: a couple of soft violet glows fixed behind
+/* Ambient night-sky backdrop: a couple of faint blue glows fixed behind
    the page content so every route shares the same atmosphere. */
 .night-sky {
   position: fixed;
@@ -56,9 +56,9 @@ body {
   z-index: -10;
   pointer-events: none;
   background:
-    radial-gradient(700px 500px at 12% -10%, rgba(168, 85, 247, 0.22), transparent 60%),
-    radial-gradient(800px 600px at 90% 10%, rgba(217, 70, 239, 0.14), transparent 60%),
-    radial-gradient(900px 700px at 50% 120%, rgba(96, 165, 250, 0.10), transparent 60%),
+    radial-gradient(700px 500px at 12% -10%, rgba(59, 130, 246, 0.16), transparent 60%),
+    radial-gradient(800px 600px at 90% 10%, rgba(37, 99, 235, 0.10), transparent 60%),
+    radial-gradient(900px 700px at 50% 120%, rgba(96, 165, 250, 0.08), transparent 60%),
     var(--background);
 }
 
@@ -94,7 +94,7 @@ body {
   inset: -1px;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(168,85,247,0.5), rgba(217,70,239,0.15), transparent 60%);
+  background: linear-gradient(135deg, rgba(59,130,246,0.55), rgba(37,99,235,0.18), transparent 60%);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;

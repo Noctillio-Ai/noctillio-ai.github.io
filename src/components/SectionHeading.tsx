@@ -3,12 +3,16 @@ export function SectionHeading({
   title,
   description,
   align = "left",
+  level = "h2",
 }: {
   eyebrow?: string;
   title: string;
   description?: string;
   align?: "left" | "center";
+  /** Use "h1" for the single, page-defining heading (one per page); "h2" for section headings. */
+  level?: "h1" | "h2";
 }) {
+  const Heading = level;
   return (
     <div className={align === "center" ? "text-center" : ""}>
       {eyebrow && (
@@ -16,7 +20,7 @@ export function SectionHeading({
           {eyebrow}
         </p>
       )}
-      <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">{title}</h2>
+      <Heading className="text-3xl font-semibold tracking-tight sm:text-4xl">{title}</Heading>
       {description && (
         <p
           className={`mt-4 max-w-2xl text-base leading-relaxed text-muted ${

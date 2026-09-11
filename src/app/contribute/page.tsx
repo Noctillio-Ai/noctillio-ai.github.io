@@ -5,10 +5,16 @@ import { Button } from "@/components/Button";
 import { ArrowRightIcon, GitHubIcon, MailIcon } from "@/components/icons";
 import { projects, site } from "@/lib/site";
 
+const title = "Contribute";
+const description =
+  "How to get involved with Noctillio AI — code, ideas, docs, testing, and how to reach the team.";
+
 export const metadata: Metadata = {
-  title: "Contribute",
-  description:
-    "How to get involved with Noctillio AI — code, ideas, docs, testing, and how to reach the team.",
+  title,
+  description,
+  alternates: { canonical: "/contribute/" },
+  openGraph: { title, description, url: "/contribute/" },
+  twitter: { title, description },
 };
 
 const ways = [
@@ -63,6 +69,7 @@ export default function ContributePage() {
       <section className="pt-20 pb-16 sm:pt-28">
         <Container>
           <SectionHeading
+            level="h1"
             eyebrow="Get involved"
             title="Noctillio AI runs on contributors"
             description="There's no paid team behind this — just people who use these tools and want them to be better. Here's how to jump in."

@@ -15,7 +15,7 @@ transparency) and produces every derived asset in `public/`:
 - `public/logo/noctillio-mark-white.png` / `noctillio-mark-black.png` —
   transparent cutouts used throughout the site (nav, footer, hero, about).
 - `public/favicon.ico`, `public/apple-touch-icon.png`,
-  `public/icon-192.png`, `public/icon-512.png` — violet-gradient badge icons.
+  `public/icon-192.png`, `public/icon-512.png` — graphite-gradient badge icons.
 - `public/og-image.png` — 1200×630 social share image.
 - `public/site.webmanifest`.
 

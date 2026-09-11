@@ -11,10 +11,10 @@ PROJECTS_DIR = PUBLIC / "projects"
 LOGO_DIR.mkdir(parents=True, exist_ok=True)
 PROJECTS_DIR.mkdir(parents=True, exist_ok=True)
 
-VIOLET_DEEP = (20, 10, 36)      # near-black violet
-VIOLET_MID = (76, 29, 149)      # deep violet
-VIOLET_BRIGHT = (168, 85, 247)  # accent violet
-VIOLET_FUCHSIA = (217, 70, 239) # accent fuchsia
+GRAPHITE_DEEP = (10, 11, 13)    # near-black graphite (matches --background)
+GRAPHITE_MID = (22, 27, 34)     # subtle cool graphite, for gradient depth
+ACCENT_BLUE = (59, 130, 246)    # accent (blue-500)
+ACCENT_BLUE_DEEP = (37, 99, 235) # accent-2 (blue-600)
 
 FONT_DIR = Path("/System/Library/Fonts/Supplemental")
 SYS_FONT_DIR = Path("/System/Library/Fonts")
@@ -94,9 +94,9 @@ def rounded_mask(size, radius):
 
 
 def make_badge(px, corner_ratio=0.22, mark_ratio=0.62, rounded=True):
-    """A square dark-violet gradient badge with the white owl mark centered."""
+    """A square graphite gradient badge with the white owl mark centered."""
     bg = radial_gradient(
-        (px, px), VIOLET_MID, VIOLET_DEEP,
+        (px, px), GRAPHITE_MID, GRAPHITE_DEEP,
         center=(px * 0.38, px * 0.32), radius=px * 0.95,
     ).convert("RGBA")
     if rounded:
@@ -137,10 +137,10 @@ print("favicons written")
 # 3. OG / social share image (1200x630)
 # ---------------------------------------------------------------------------
 OG_W, OG_H = 1200, 630
-og = radial_gradient((OG_W, OG_H), VIOLET_MID, VIOLET_DEEP, center=(OG_W * 0.28, OG_H * 0.32), radius=1100).convert("RGBA")
+og = radial_gradient((OG_W, OG_H), GRAPHITE_MID, GRAPHITE_DEEP, center=(OG_W * 0.28, OG_H * 0.32), radius=1100).convert("RGBA")
 
 # subtle vignette
-vignette = radial_gradient((OG_W, OG_H), (0, 0, 0), VIOLET_DEEP, center=(OG_W * 0.28, OG_H * 0.32), radius=1300)
+vignette = radial_gradient((OG_W, OG_H), (0, 0, 0), GRAPHITE_DEEP, center=(OG_W * 0.28, OG_H * 0.32), radius=1300)
 og = Image.blend(og, vignette.convert("RGBA"), 0.15)
 
 draw = ImageDraw.Draw(og)
@@ -176,12 +176,12 @@ title_y = OG_H // 2 - 120
 draw.text((text_x, title_y), "Noctillio AI", font=title_font, fill=(255, 255, 255, 255))
 
 tagline_y = title_y + 95
-draw.text((text_x, tagline_y), "Open-source deep learning,", font=tagline_font, fill=(214, 188, 250, 255))
-draw.text((text_x, tagline_y + 42), "built in the open at night.", font=tagline_font, fill=(214, 188, 250, 255))
+draw.text((text_x, tagline_y), "Open-source deep learning,", font=tagline_font, fill=(176, 196, 214, 255))
+draw.text((text_x, tagline_y + 42), "built in the open at night.", font=tagline_font, fill=(176, 196, 214, 255))
 
 # small pill with project names
 pill_y = tagline_y + 110
-draw.text((text_x, pill_y), "AutoTimm  ·  NightFlow  ·  and what you build next", font=small_font, fill=(168, 85, 247, 255))
+draw.text((text_x, pill_y), "AutoTimm  ·  NightFlow  ·  and what you build next", font=small_font, fill=ACCENT_BLUE + (255,))
 
 og.convert("RGB").save(PUBLIC / "og-image.png", quality=95)
 print("og image written")
@@ -198,8 +198,8 @@ manifest = {
         {"src": "/icon-192.png", "sizes": "192x192", "type": "image/png"},
         {"src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
     ],
-    "theme_color": "#140a24",
-    "background_color": "#0a0713",
+    "theme_color": "#0a0b0d",
+    "background_color": "#0a0b0d",
     "display": "standalone",
 }
 (PUBLIC / "site.webmanifest").write_text(json.dumps(manifest, indent=2) + "\n")
