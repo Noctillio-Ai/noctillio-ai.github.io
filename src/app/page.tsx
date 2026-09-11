@@ -2,10 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
-import { SectionHeading } from "@/components/SectionHeading";
-import { ProjectCard } from "@/components/ProjectCard";
 import { ArrowRightIcon, GitHubIcon, SparkleIcon } from "@/components/icons";
-import { projects, site } from "@/lib/site";
+import { site } from "@/lib/site";
 
 export default function Home() {
   return (
@@ -97,30 +95,6 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* Project highlights */}
-      <section className="py-24">
-        <Container>
-          <SectionHeading
-            eyebrow="Highlighted projects"
-            title="Two tools. One workflow — from training to inspection."
-            description="Both projects are live, open-source, and actively looking for contributors — good first issues included."
-          />
-
-          <div className="mt-14 flex flex-col gap-10">
-            {projects.map((project, i) => (
-              <ProjectCard key={project.slug} project={project} index={i} />
-            ))}
-          </div>
-
-          <div className="mt-10 flex justify-center">
-            <Button href="/projects" variant="ghost">
-              See full project details
-              <ArrowRightIcon className="h-4 w-4" />
-            </Button>
-          </div>
-        </Container>
-      </section>
-
       {/* Collaborator CTA */}
       <section className="pb-28">
         <Container>
@@ -139,7 +113,7 @@ export default function Home() {
                 <ArrowRightIcon className="h-4 w-4" />
               </Button>
               <Button href="/about" variant="secondary">
-                Meet the founder
+                Read our mission
               </Button>
             </div>
           </div>

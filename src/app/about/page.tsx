@@ -3,8 +3,6 @@ import Image from "next/image";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Button } from "@/components/Button";
-import { GitHubIcon, LinkedInIcon, MailIcon } from "@/components/icons";
-import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About",
@@ -135,67 +133,6 @@ export default function AboutPage() {
             <Button href="/contribute" variant="primary">
               See how to contribute
             </Button>
-          </div>
-        </Container>
-      </section>
-
-      {/* Leadership */}
-      <section className="py-20">
-        <Container>
-          <SectionHeading eyebrow="Leadership" title="Head of Noctillio-Ai" />
-          <div className="mt-10 flex flex-col items-center gap-6 rounded-3xl border border-border bg-background-elevated p-8 text-center sm:flex-row sm:items-center sm:gap-8 sm:p-10 sm:text-left">
-            {/*
-              Swap this initials avatar for a real headshot once you have one:
-              drop the file at public/team/krishnatheja-vanka.jpg and replace
-              the div below with an <Image src="/team/krishnatheja-vanka.jpg" .../>.
-            */}
-            <div className="flex h-24 w-24 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-accent to-accent-2 text-2xl font-semibold text-white">
-              KV
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold">Krishnatheja Vanka</h3>
-              <p className="mt-1 text-sm text-accent">Founder &amp; Head of Noctillio-Ai</p>
-              <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted">
-                Krishnatheja started AutoTimm and NightFlow out of his own need for
-                better deep learning tooling, then opened both up and founded
-                Noctillio-Ai to build the rest of the toolkit with the community.
-              </p>
-              <div className="mt-4 flex items-center justify-center gap-3 sm:justify-start">
-                <a
-                  href="https://theja-vanka.github.io/"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="text-sm font-medium text-muted transition-colors hover:text-foreground"
-                >
-                  Portfolio
-                </a>
-                <a
-                  href="https://github.com/theja-vanka"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  aria-label="GitHub"
-                  className="flex h-8 w-8 items-center justify-center rounded-full border border-border-strong text-muted transition-colors hover:border-accent/60 hover:text-foreground"
-                >
-                  <GitHubIcon className="h-4 w-4" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/krishnatheja-vanka/"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  aria-label="LinkedIn"
-                  className="flex h-8 w-8 items-center justify-center rounded-full border border-border-strong text-muted transition-colors hover:border-accent/60 hover:text-foreground"
-                >
-                  <LinkedInIcon className="h-4 w-4" />
-                </a>
-                <a
-                  href={`mailto:${site.email}`}
-                  aria-label="Email"
-                  className="flex h-8 w-8 items-center justify-center rounded-full border border-border-strong text-muted transition-colors hover:border-accent/60 hover:text-foreground"
-                >
-                  <MailIcon className="h-4 w-4" />
-                </a>
-              </div>
-            </div>
           </div>
         </Container>
       </section>
