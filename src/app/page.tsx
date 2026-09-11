@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden pt-20 pb-24 sm:pt-28 sm:pb-32">
+      <section className="relative overflow-hidden pt-20 pb-20 sm:pt-28 sm:pb-28">
         <Container className="relative z-10">
           <div className="flex flex-col items-center text-center">
             <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-border-strong bg-background-elevated px-4 py-1.5 text-xs font-medium text-muted">
@@ -96,7 +96,7 @@ export default function Home() {
       </section>
 
       {/* Collaborator CTA */}
-      <section className="pb-28">
+      <section className="pt-20 pb-28 sm:pt-24">
         <Container>
           <div className="card-glow relative overflow-hidden rounded-3xl border border-border bg-background-elevated px-8 py-16 text-center sm:px-16">
             <div className="animate-pulse-glow pointer-events-none absolute left-1/2 top-0 h-64 w-[36rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/25 blur-3xl" />
