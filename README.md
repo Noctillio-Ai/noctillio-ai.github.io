@@ -1,6 +1,6 @@
-# NoctillioAi
+# Noctillio AI
 
-The site for **NoctillioAi** — an open-source community building tools for
+The site for **Noctillio AI** — an open-source community building tools for
 deep learning: image processing, video processing, model training, and VLM
 fine-tuning. Highlights [AutoTimm](https://theja-vanka.github.io/AutoTimm/)
 and [NightFlow](https://theja-vanka.github.io/NightFlow/).

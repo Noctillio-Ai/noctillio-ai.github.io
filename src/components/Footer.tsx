@@ -13,7 +13,7 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-2.5">
               <Image
                 src="/logo/noctillio-mark-white.png"
-                alt="NoctillioAi owl mark"
+                alt="Noctillio AI owl mark"
                 width={30}
                 height={22}
                 className="h-6 w-auto"
@@ -30,14 +30,14 @@ export function Footer() {
                 href={site.githubOrg}
                 target="_blank"
                 rel="noreferrer noopener"
-                aria-label="NoctillioAi on GitHub"
+                aria-label="Noctillio AI on GitHub"
                 className="flex h-9 w-9 items-center justify-center rounded-full border border-border-strong text-muted transition-colors hover:border-accent/60 hover:text-foreground"
               >
                 <GitHubIcon className="h-4 w-4" />
               </a>
               <a
                 href={`mailto:${site.email}`}
-                aria-label="Email NoctillioAi"
+                aria-label="Email Noctillio AI"
                 className="flex h-9 w-9 items-center justify-center rounded-full border border-border-strong text-muted transition-colors hover:border-accent/60 hover:text-foreground"
               >
                 <MailIcon className="h-4 w-4" />
@@ -111,7 +111,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col gap-3 border-t border-border pt-6 text-xs text-muted-2 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {year} NoctillioAi. Open source under each project&apos;s own license.</p>
+          <p>© {year} Noctillio AI. Open source under each project&apos;s own license.</p>
           <p>Founded &amp; led by Krishnatheja Vanka.</p>
         </div>
       </div>

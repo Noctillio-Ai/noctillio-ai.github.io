@@ -7,14 +7,14 @@ import { Button } from "@/components/Button";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "What NoctillioAi stands for, why it's open source, and why the organization is looking for collaborators.",
+    "What Noctillio AI stands for, why it's open source, and why the organization is looking for collaborators.",
 };
 
 const openSourceReasons = [
   {
     title: "Transparency over black boxes",
     body:
-      "Deep learning already has enough opaque behavior in the models themselves. The tooling around it — training loops, data pipelines, experiment tracking — shouldn't add more. Every line of every NoctillioAi project is inspectable, forkable, and yours to audit.",
+      "Deep learning already has enough opaque behavior in the models themselves. The tooling around it — training loops, data pipelines, experiment tracking — shouldn't add more. Every line of every Noctillio AI project is inspectable, forkable, and yours to audit.",
   },
   {
     title: "Reproducibility by default",
@@ -57,9 +57,9 @@ export default function AboutPage() {
       <section className="pt-20 pb-16 sm:pt-28">
         <Container>
           <SectionHeading
-            eyebrow="About NoctillioAi"
+            eyebrow="About Noctillio AI"
             title="Deep learning research happens at odd hours. We build for that."
-            description="NoctillioAi is a free, open-source community building tools for deep learning — image processing, video processing, model training, and vision-language model fine-tuning."
+            description="Noctillio AI is a free, open-source community building tools for deep learning — image processing, video processing, model training, and vision-language model fine-tuning."
           />
         </Container>
       </section>
@@ -72,7 +72,7 @@ export default function AboutPage() {
               <div className="animate-pulse-glow absolute inset-0 -z-10 rounded-full bg-accent/25 blur-3xl" />
               <Image
                 src="/logo/noctillio-mark-white.png"
-                alt="NoctillioAi owl mark"
+                alt="Noctillio AI owl mark"
                 width={220}
                 height={160}
                 className="h-40 w-auto sm:h-48"
@@ -91,7 +91,7 @@ export default function AboutPage() {
               and always watching the loss curve.
             </p>
             <p className="mt-4 text-base leading-relaxed text-muted">
-              NoctillioAi isn&apos;t a company and it isn&apos;t a product — it&apos;s a
+              Noctillio AI isn&apos;t a company and it isn&apos;t a product — it&apos;s a
               community of people building the tools we personally needed and
               couldn&apos;t find, then deciding to give them away.
             </p>

@@ -8,7 +8,7 @@ import { projects, site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contribute",
   description:
-    "How to get involved with NoctillioAi — code, ideas, docs, testing, and how to reach the team.",
+    "How to get involved with Noctillio AI — code, ideas, docs, testing, and how to reach the team.",
 };
 
 const ways = [
@@ -64,7 +64,7 @@ export default function ContributePage() {
         <Container>
           <SectionHeading
             eyebrow="Get involved"
-            title="NoctillioAi runs on contributors"
+            title="Noctillio AI runs on contributors"
             description="There's no paid team behind this — just people who use these tools and want them to be better. Here's how to jump in."
           />
         </Container>
@@ -142,7 +142,7 @@ export default function ContributePage() {
               </Button>
               <Button href={site.githubOrg} external variant="secondary">
                 <GitHubIcon className="h-4 w-4" />
-                NoctillioAi on GitHub
+                Noctillio AI on GitHub
                 <ArrowRightIcon className="h-3.5 w-3.5" />
               </Button>
             </div>

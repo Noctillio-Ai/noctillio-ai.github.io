@@ -1,4 +1,4 @@
-"""Generate brand assets (logo cutouts, favicons, OG image) for NoctillioAi."""
+"""Generate brand assets (logo cutouts, favicons, OG image) for Noctillio AI."""
 import math
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageOps
@@ -173,7 +173,7 @@ tagline_font = font(SYS_FONT_DIR / "SFNSMono.ttf", 30)
 small_font = font(SYS_FONT_DIR / "SFNSMono.ttf", 24)
 
 title_y = OG_H // 2 - 120
-draw.text((text_x, title_y), "NoctillioAi", font=title_font, fill=(255, 255, 255, 255))
+draw.text((text_x, title_y), "Noctillio AI", font=title_font, fill=(255, 255, 255, 255))
 
 tagline_y = title_y + 95
 draw.text((text_x, tagline_y), "Open-source deep learning,", font=tagline_font, fill=(214, 188, 250, 255))
@@ -191,8 +191,8 @@ print("og image written")
 # ---------------------------------------------------------------------------
 import json
 manifest = {
-    "name": "NoctillioAi",
-    "short_name": "NoctillioAi",
+    "name": "Noctillio AI",
+    "short_name": "Noctillio AI",
     "description": "Open-source deep learning tools for image, video and model training.",
     "icons": [
         {"src": "/icon-192.png", "sizes": "192x192", "type": "image/png"},
