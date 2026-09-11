@@ -1,0 +1,21 @@
+{
+  "name": "Noctillio-Ai",
+  "short_name": "Noctillio-Ai",
+  "description": "Open-source deep learning tools for image, video and model training.",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "theme_color": "#140a24",
+  "background_color": "#0a0713",
+  "display": "standalone"
+}

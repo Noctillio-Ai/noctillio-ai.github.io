@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0713;
+  --background-elevated: #120b22;
+  --background-elevated-2: #170f2b;
+  --foreground: #f5f3fb;
+  --muted: #a9a0c4;
+  --muted-2: #7c7397;
+  --border: #241a3d;
+  --border-strong: #352654;
+
+  --accent: #a855f7;
+  --accent-2: #d946ef;
+  --accent-3: #60a5fa;
+  --accent-soft: rgba(168, 85, 247, 0.14);
+  --accent-glow: rgba(168, 85, 247, 0.45);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-elevated: var(--background-elevated);
+  --color-background-elevated-2: var(--background-elevated-2);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-2: var(--muted-2);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-3: var(--accent-3);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Ambient night-sky backdrop: a couple of soft violet glows fixed behind
+   the page content so every route shares the same atmosphere. */
+.night-sky {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  pointer-events: none;
+  background:
+    radial-gradient(700px 500px at 12% -10%, rgba(168, 85, 247, 0.22), transparent 60%),
+    radial-gradient(800px 600px at 90% 10%, rgba(217, 70, 239, 0.14), transparent 60%),
+    radial-gradient(900px 700px at 50% 120%, rgba(96, 165, 250, 0.10), transparent 60%),
+    var(--background);
+}
+
+.night-sky::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  background-image:
+    radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.5) 0, transparent 40%),
+    radial-gradient(1px 1px at 70% 60%, rgba(255,255,255,0.4) 0, transparent 40%),
+    radial-gradient(1px 1px at 40% 80%, rgba(255,255,255,0.35) 0, transparent 40%),
+    radial-gradient(1px 1px at 85% 15%, rgba(255,255,255,0.45) 0, transparent 40%),
+    radial-gradient(1px 1px at 55% 45%, rgba(255,255,255,0.3) 0, transparent 40%),
+    radial-gradient(1px 1px at 10% 65%, rgba(255,255,255,0.4) 0, transparent 40%);
+  background-size: 100% 100%;
+}
+
+.text-gradient {
+  background-image: linear-gradient(120deg, #ffffff 0%, var(--accent) 55%, var(--accent-2) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.card-glow {
+  position: relative;
+}
+
+.card-glow::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(168,85,247,0.5), rgba(217,70,239,0.15), transparent 60%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.card-glow:hover::before {
+  opacity: 1;
+}
+
+.glass {
+  background: color-mix(in srgb, var(--background-elevated) 88%, transparent);
+  backdrop-filter: blur(14px);
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-14px); }
+}
+
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3.5s ease-in-out infinite;
+}
