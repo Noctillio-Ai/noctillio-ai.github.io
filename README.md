@@ -20,7 +20,7 @@ Open [http://localhost:3000](http://localhost:3000).
 ## Editing content
 
 - **Copy** — each page's text lives directly in its `src/app/**/page.tsx` file.
-- **Projects, nav links, org/email links** — centralized in `src/lib/site.ts`.
+- **Projects, nav links, org/Discord links** — centralized in `src/lib/site.ts`.
 - **Theme / colors** — CSS custom properties at the top of `src/app/globals.css`.
 - **Logo & generated assets** — `public/logo/`, `public/icon-*.png`,
   `public/apple-touch-icon.png`, `public/og-image.png`, `public/site.webmanifest`.

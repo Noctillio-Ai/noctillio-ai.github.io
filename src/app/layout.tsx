@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 const siteUrl = "https://noctillio-ai.github.io";
 
-const defaultTitle = `${site.name} — Open-source deep learning tools`;
+const defaultTitle = `${site.name}: Open-source deep learning tools`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     description: site.description,
     url: siteUrl,
     siteName: site.name,
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: `${site.name} — owl mark on a night sky` }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: `${site.name} owl mark on a night sky` }],
     type: "website",
     locale: "en_US",
   },

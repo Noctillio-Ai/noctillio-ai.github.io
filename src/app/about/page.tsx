@@ -20,7 +20,7 @@ const openSourceReasons = [
   {
     title: "Transparency over black boxes",
     body:
-      "Deep learning already has enough opaque behavior in the models themselves. The tooling around it — training loops, data pipelines, experiment tracking — shouldn't add more. Every line of every Noctillio AI project is inspectable, forkable, and yours to audit.",
+      "Deep learning already has enough opaque behavior in the models themselves. The tooling around it (training loops, data pipelines, experiment tracking) shouldn't add more. Every line of every Noctillio AI project is inspectable, forkable, and yours to audit.",
   },
   {
     title: "Reproducibility by default",
@@ -43,7 +43,7 @@ const collaborateReasons = [
   {
     title: "The surface area is too big for one person",
     body:
-      "Vision architectures, video pipelines, VLM fine-tuning, desktop app engineering, MLOps, docs — each is its own discipline. No single maintainer can go deep on all of them at once.",
+      "Vision architectures, video pipelines, VLM fine-tuning, desktop app engineering, MLOps, docs: each is its own discipline. No single maintainer can go deep on all of them at once.",
   },
   {
     title: "Different hardware, different bugs",
@@ -53,7 +53,7 @@ const collaborateReasons = [
   {
     title: "Fresh problems worth solving",
     body:
-      "Good-first-issues, architecture questions, and open feature requests are waiting on both projects — real, useful work, not busywork.",
+      "Good-first-issues, architecture questions, and open feature requests are waiting on both projects: real, useful work, not busywork.",
   },
 ];
 
@@ -66,7 +66,7 @@ export default function AboutPage() {
             level="h1"
             eyebrow="About Noctillio AI"
             title="Deep learning research happens at odd hours. We build for that."
-            description="Noctillio AI is a free, open-source community building tools for deep learning — image processing, video processing, model training, and vision-language model fine-tuning."
+            description="Noctillio AI is a free, open-source community building tools for deep learning: image processing, video processing, model training, and vision-language model fine-tuning."
           />
         </Container>
       </section>
@@ -91,14 +91,14 @@ export default function AboutPage() {
               What &quot;Noctillio&quot; stands for
             </h2>
             <p className="mt-4 text-base leading-relaxed text-muted">
-              The name leans on <em>nocturnal</em> — the long, late-night training
+              The name leans on <em>nocturnal</em>: the long, late-night training
               runs, the debugging sessions that stretch past midnight, the quiet
               hours when most real progress on a hard model actually happens. The
               owl in the mark is the through-line: sharp-eyed in low light, patient,
               and always watching the loss curve.
             </p>
             <p className="mt-4 text-base leading-relaxed text-muted">
-              Noctillio AI isn&apos;t a company and it isn&apos;t a product — it&apos;s a
+              Noctillio AI isn&apos;t a company and it isn&apos;t a product; it&apos;s a
               community of people building the tools we personally needed and
               couldn&apos;t find, then deciding to give them away.
             </p>

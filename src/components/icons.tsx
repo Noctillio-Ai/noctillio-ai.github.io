@@ -14,11 +14,10 @@ export function LinkedInIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export function MailIcon(props: React.SVGProps<SVGSVGElement>) {
+export function DiscordIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.7} {...props}>
-      <rect x="2.5" y="4.5" width="19" height="15" rx="2.2" />
-      <path d="m3.5 6 8.5 6.5L20.5 6" strokeLinecap="round" strokeLinejoin="round" />
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M20.32 5.37a18.6 18.6 0 0 0-4.6-1.43 13.9 13.9 0 0 0-.6 1.23 17.2 17.2 0 0 0-5.06 0 12.6 12.6 0 0 0-.61-1.23 18.5 18.5 0 0 0-4.6 1.43C1.24 9.16.49 12.85.86 16.48a18.7 18.7 0 0 0 5.63 2.85c.46-.62.86-1.28 1.2-1.98a12 12 0 0 1-1.9-.91c.16-.12.32-.24.47-.37a13.2 13.2 0 0 0 11.48 0c.15.13.31.25.47.37-.6.36-1.24.66-1.9.91.34.7.74 1.36 1.2 1.98a18.6 18.6 0 0 0 5.64-2.85c.44-4.21-.67-7.86-2.83-11.11ZM8.68 14.2c-.94 0-1.71-.87-1.71-1.94 0-1.07.75-1.94 1.71-1.94.96 0 1.73.88 1.71 1.94 0 1.07-.75 1.94-1.71 1.94Zm6.65 0c-.94 0-1.71-.87-1.71-1.94 0-1.07.75-1.94 1.71-1.94.96 0 1.73.88 1.71 1.94 0 1.07-.75 1.94-1.71 1.94Z" />
     </svg>
   );
 }

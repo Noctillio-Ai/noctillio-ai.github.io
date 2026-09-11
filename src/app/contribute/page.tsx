@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Button } from "@/components/Button";
-import { ArrowRightIcon, GitHubIcon, MailIcon } from "@/components/icons";
+import { ArrowRightIcon, DiscordIcon, GitHubIcon } from "@/components/icons";
 import { projects, site } from "@/lib/site";
 
 const title = "Contribute";
 const description =
-  "How to get involved with Noctillio AI — code, ideas, docs, testing, and how to reach the team.";
+  "How to get involved with Noctillio AI: code, ideas, docs, testing, and how to reach the team.";
 
 export const metadata: Metadata = {
   title,
@@ -21,12 +21,12 @@ const ways = [
   {
     title: "Ship code",
     body:
-      "Pick up an open issue on AutoTimm or NightFlow, or fix something that's bugging you. PRs of any size — a new backbone wrapper, a bug fix, a perf tweak — are welcome.",
+      "Pick up an open issue on AutoTimm or NightFlow, or fix something that's bugging you. PRs of any size (a new backbone wrapper, a bug fix, a perf tweak) are welcome.",
   },
   {
     title: "Propose ideas",
     body:
-      "Have a feature in mind, or an idea for a whole new tool — a video-processing pipeline, a VLM fine-tuning helper? Open a discussion or issue and let's shape it together.",
+      "Have a feature in mind, or an idea for a whole new tool (a video-processing pipeline, a VLM fine-tuning helper)? Open a discussion or issue and let's shape it together.",
   },
   {
     title: "Improve docs & tutorials",
@@ -54,7 +54,7 @@ const steps = [
   {
     step: "03",
     title: "Fork, build, and open a PR",
-    body: "Fork the repo, make your change, and open a pull request — small, focused PRs get reviewed fastest.",
+    body: "Fork the repo, make your change, and open a pull request; small, focused PRs get reviewed fastest.",
   },
   {
     step: "04",
@@ -72,7 +72,7 @@ export default function ContributePage() {
             level="h1"
             eyebrow="Get involved"
             title="Noctillio AI runs on contributors"
-            description="There's no paid team behind this — just people who use these tools and want them to be better. Here's how to jump in."
+            description="There's no paid team behind this: just people who use these tools and want them to be better. Here's how to jump in."
           />
         </Container>
       </section>
@@ -139,13 +139,13 @@ export default function ContributePage() {
               Not sure where to start? Just say hi.
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-[color:var(--card-body)]">
-              Reach out directly and we&apos;ll point you at something that fits
-              what you&apos;re interested in.
+              Drop into our Discord and we&apos;ll point you at something that
+              fits what you&apos;re interested in.
             </p>
             <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
-              <Button href={`mailto:${site.email}`} variant="primary">
-                <MailIcon className="h-4 w-4" />
-                {site.email}
+              <Button href={site.discord} external variant="primary">
+                <DiscordIcon className="h-4 w-4" />
+                Join our Discord
               </Button>
               <Button href={site.githubOrg} external variant="secondary">
                 <GitHubIcon className="h-4 w-4" />

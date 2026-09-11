@@ -37,7 +37,7 @@ export default function Home() {
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
               {site.name} is a free, open-source community building practical tooling
               for image processing, video processing, model training, and VLM
-              fine-tuning — so the next great CV pipeline doesn&apos;t start from zero.
+              fine-tuning, so the next great CV pipeline doesn&apos;t start from zero.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -61,21 +61,21 @@ export default function Home() {
             {
               title: "What we build",
               body:
-                "Focused, well-engineered tools across the deep learning workflow — from training frameworks like AutoTimm to experiment tooling like NightFlow.",
+                "Focused, well-engineered tools across the deep learning workflow, from training frameworks like AutoTimm to experiment tooling like NightFlow.",
               href: "/projects",
               cta: "See the projects",
             },
             {
               title: "Why open source",
               body:
-                "Research tooling should be inspectable, reproducible, and free to build on — not locked behind a product. Every line ships in the open.",
+                "Research tooling should be inspectable, reproducible, and free to build on, not locked behind a product. Every line ships in the open.",
               href: "/about",
               cta: "Read our mission",
             },
             {
               title: "Why we need you",
               body:
-                "Deep learning moves across too many fronts — vision, video, systems, UX — for one person to cover alone. We're looking for collaborators.",
+                "Deep learning moves across too many fronts (vision, video, systems, UX) for one person to cover alone. We're looking for collaborators.",
               href: "/contribute",
               cta: "Get involved",
             },
@@ -104,7 +104,7 @@ export default function Home() {
               Deep learning at night needs more hands.
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[color:var(--card-body)]">
-              Whether it&apos;s a new backbone, a bug fix, a UI polish, or docs —
+              Whether it&apos;s a new backbone, a bug fix, a UI polish, or docs,
               there&apos;s a good first issue with your name on it.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">

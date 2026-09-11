@@ -8,7 +8,7 @@ import { projects } from "@/lib/site";
 
 const title = "Projects";
 const description =
-  "AutoTimm and NightFlow — open-source tools for computer vision training and deep learning experiment management, built by Noctillio AI.";
+  "AutoTimm and NightFlow: open-source tools for computer vision training and deep learning experiment management, built by Noctillio AI.";
 
 export const metadata: Metadata = {
   title,
@@ -63,7 +63,7 @@ export default function ProjectsPage() {
             Have an idea for the next Noctillio AI tool?
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-[color:var(--card-body)]">
-            Video processing pipelines, VLM fine-tuning utilities, dataset tooling —
+            Video processing pipelines, VLM fine-tuning utilities, dataset tooling:
             if it removes friction from a deep learning workflow, we want to hear
             about it.
           </p>

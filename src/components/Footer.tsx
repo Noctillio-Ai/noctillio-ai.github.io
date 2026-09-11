@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { nav, site, projects } from "@/lib/site";
-import { GitHubIcon, LinkedInIcon, MailIcon } from "./icons";
+import { DiscordIcon, GitHubIcon, LinkedInIcon } from "./icons";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -36,11 +36,13 @@ export function Footer() {
                 <GitHubIcon className="h-4 w-4" />
               </a>
               <a
-                href={`mailto:${site.email}`}
-                aria-label="Email Noctillio AI"
+                href={site.discord}
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label="Noctillio AI on Discord"
                 className="flex h-9 w-9 items-center justify-center rounded-full border border-border-strong text-muted transition-colors hover:border-accent/60 hover:text-foreground"
               >
-                <MailIcon className="h-4 w-4" />
+                <DiscordIcon className="h-4 w-4" />
               </a>
             </div>
           </div>
