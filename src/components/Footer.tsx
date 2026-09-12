@@ -8,7 +8,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-[#050609]">
       <div className="mx-auto max-w-6xl px-6 py-14">
-        <div className="grid gap-10 md:grid-cols-[1.3fr_1fr_1fr_1fr]">
+        <div className="flex flex-col gap-10 md:grid md:grid-cols-[1.3fr_1fr_1fr_1fr]">
           <div>
             <Link href="/" className="flex items-center gap-2.5">
               <Image
@@ -47,68 +47,70 @@ export function Footer() {
             </div>
           </div>
 
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-muted-2">
-              Site
-            </p>
-            <ul className="mt-4 space-y-2.5">
-              {nav.map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href} className="text-sm text-muted transition-colors hover:text-foreground">
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 md:contents">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wider text-muted-2">
+                Site
+              </p>
+              <ul className="mt-4 space-y-2.5">
+                {nav.map((item) => (
+                  <li key={item.href}>
+                    <Link href={item.href} className="text-sm text-muted transition-colors hover:text-foreground">
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-muted-2">
-              Projects
-            </p>
-            <ul className="mt-4 space-y-2.5">
-              {projects.map((p) => (
-                <li key={p.slug}>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wider text-muted-2">
+                Projects
+              </p>
+              <ul className="mt-4 space-y-2.5">
+                {projects.map((p) => (
+                  <li key={p.slug}>
+                    <a
+                      href={p.liveUrl}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="text-sm text-muted transition-colors hover:text-foreground"
+                    >
+                      {p.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wider text-muted-2">
+                Leadership
+              </p>
+              <ul className="mt-4 space-y-2.5">
+                <li>
                   <a
-                    href={p.liveUrl}
+                    href="https://theja-vanka.github.io/"
                     target="_blank"
                     rel="noreferrer noopener"
                     className="text-sm text-muted transition-colors hover:text-foreground"
                   >
-                    {p.name}
+                    Krishnatheja Vanka
                   </a>
                 </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-muted-2">
-              Leadership
-            </p>
-            <ul className="mt-4 space-y-2.5">
-              <li>
-                <a
-                  href="https://theja-vanka.github.io/"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="text-sm text-muted transition-colors hover:text-foreground"
-                >
-                  Krishnatheja Vanka
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/krishnatheja-vanka/"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-foreground"
-                >
-                  <LinkedInIcon className="h-3.5 w-3.5" />
-                  LinkedIn
-                </a>
-              </li>
-            </ul>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/krishnatheja-vanka/"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-foreground"
+                  >
+                    <LinkedInIcon className="h-3.5 w-3.5" />
+                    LinkedIn
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
