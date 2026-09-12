@@ -12,63 +12,78 @@ import { GitHubIcon } from "./icons";
 // the footer and sitemap via the shared `nav` list).
 const navTabs = nav.filter((item) => item.href !== "/contribute");
 
+// The site is exported with trailingSlash: true, so a statically-loaded
+// route's pathname comes back as e.g. "/about/" while nav hrefs are
+// written as "/about" — strip the trailing slash before comparing so the
+// active tab actually highlights on every page, not just "/".
+const stripTrailingSlash = (path: string) => (path.length > 1 ? path.replace(/\/$/, "") : path);
+
 export function Navbar() {
-  const pathname = usePathname();
+  const pathname = stripTrailingSlash(usePathname());
   const [open, setOpen] = useState(false);
 
   return (
     <header className="sticky top-3 z-50 px-4 sm:top-5">
-      <div className="mx-auto flex max-w-5xl items-center gap-2 rounded-full border border-border-strong bg-background-elevated/90 py-2 pl-4 pr-2 shadow-[0_12px_32px_-12px_rgba(0,0,0,0.65)] backdrop-blur-xl sm:gap-4 sm:pr-3">
-        <Link
-          href="/"
-          className="flex items-center gap-2.5"
-          onClick={() => setOpen(false)}
-        >
-          <Image
-            src="/logo/noctillio-mark-white.png"
-            alt="Noctillio AI owl mark"
-            width={30}
-            height={22}
-            className="h-6 w-auto"
-            priority
-          />
-          <span className="hidden text-base font-semibold tracking-tight sm:inline">
-            {site.name}
-          </span>
-        </Link>
+      <div className="mx-auto flex max-w-5xl items-center gap-2 rounded-full border border-border-strong bg-background-elevated/90 py-2 pl-4 pr-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.07),0_12px_32px_-12px_rgba(0,0,0,0.65)] backdrop-blur-xl sm:gap-4 sm:pr-3">
+        <div className="flex items-center gap-2 sm:gap-4">
+          <Link
+            href="/"
+            className="group flex items-center gap-2.5"
+            onClick={() => setOpen(false)}
+          >
+            <Image
+              src="/logo/noctillio-mark-white.png"
+              alt="Noctillio AI owl mark"
+              width={30}
+              height={22}
+              className="h-6 w-auto transition-transform duration-300 group-hover:scale-110"
+              priority
+            />
+            <span className="hidden text-base font-semibold tracking-tight transition-colors sm:inline group-hover:text-accent">
+              {site.name}
+            </span>
+          </Link>
+          <span className="hidden h-6 w-px bg-border-strong md:block" aria-hidden="true" />
+        </div>
 
-        <nav className="hidden items-center gap-1 md:flex">
-          {navTabs.map((item) => {
-            const active = pathname === item.href;
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-                  active
-                    ? "text-foreground bg-background-elevated-2"
-                    : "text-muted hover:text-foreground"
-                }`}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
-        </nav>
+        <div className="hidden flex-1 items-center justify-center md:flex">
+          <nav className="flex items-center gap-1">
+            {navTabs.map((item) => {
+              const active = pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`relative rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                    active
+                      ? "text-foreground"
+                      : "text-muted hover:text-foreground hover:bg-background-elevated-2/60"
+                  }`}
+                >
+                  {active && (
+                    <span className="absolute bottom-0.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-accent shadow-[0_0_6px_rgba(95,145,251,0.9)]" />
+                  )}
+                  {item.label}
+                </Link>
+              );
+            })}
+          </nav>
+        </div>
 
-        <div className="ml-auto hidden items-center gap-2 md:flex">
+        <div className="hidden items-center gap-3 md:flex">
+          <span className="h-6 w-px bg-border-strong" aria-hidden="true" />
           <a
             href={site.githubOrg}
             target="_blank"
             rel="noreferrer noopener"
-            className="flex items-center gap-2 rounded-full border border-border-strong px-4 py-2 text-sm font-medium text-muted transition-colors hover:border-accent/60 hover:text-foreground"
+            className="flex items-center gap-2 rounded-full border border-border-strong px-4 py-2 text-sm font-medium text-muted transition-colors hover:border-accent/60 hover:bg-background-elevated-2 hover:text-foreground"
           >
             <GitHubIcon className="h-4 w-4" />
             GitHub
           </a>
           <Link
             href="/contribute"
-            className="rounded-full bg-gradient-to-r from-accent to-accent-3 px-4 py-2 text-sm font-medium text-background shadow-[0_0_20px_-6px_rgba(95,145,251,0.85)] transition-transform hover:-translate-y-0.5"
+            className="rounded-full bg-gradient-to-r from-accent to-accent-3 px-4 py-2 text-sm font-medium text-background shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_0_20px_-6px_rgba(95,145,251,0.85)] transition-transform hover:-translate-y-0.5"
           >
             Get involved
           </Link>
@@ -77,7 +92,7 @@ export function Navbar() {
         <button
           aria-label="Toggle menu"
           onClick={() => setOpen((v) => !v)}
-          className="ml-auto flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full border border-border-strong text-foreground md:hidden"
+          className="ml-auto flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full border border-border-strong text-foreground transition-colors hover:border-accent/60 md:hidden"
         >
           <span className="relative block h-3.5 w-4">
             <span
@@ -94,19 +109,22 @@ export function Navbar() {
       </div>
 
       {open && (
-        <div className="mx-auto mt-2 max-w-5xl rounded-3xl border border-border-strong bg-background-elevated/95 px-4 py-4 shadow-[0_12px_32px_-12px_rgba(0,0,0,0.65)] backdrop-blur-xl md:hidden">
+        <div className="mx-auto mt-2 max-w-5xl rounded-3xl border border-border-strong bg-background-elevated/95 px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.07),0_12px_32px_-12px_rgba(0,0,0,0.65)] backdrop-blur-xl md:hidden">
           <nav className="flex flex-col gap-1">
             {navTabs.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className={`rounded-lg px-3 py-2.5 text-sm font-medium ${
+                className={`flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
                   pathname === item.href
-                    ? "bg-background-elevated-2 text-foreground"
-                    : "text-muted"
+                    ? "text-foreground"
+                    : "text-muted hover:text-foreground"
                 }`}
               >
+                {pathname === item.href && (
+                  <span className="h-1 w-1 rounded-full bg-accent shadow-[0_0_6px_rgba(95,145,251,0.9)]" />
+                )}
                 {item.label}
               </Link>
             ))}
@@ -114,7 +132,7 @@ export function Navbar() {
               href={site.githubOrg}
               target="_blank"
               rel="noreferrer noopener"
-              className="mt-2 flex items-center gap-2 rounded-lg border border-border-strong px-3 py-2.5 text-sm font-medium text-muted"
+              className="mt-2 flex items-center gap-2 rounded-lg border border-border-strong px-3 py-2.5 text-sm font-medium text-muted transition-colors hover:border-accent/60 hover:text-foreground"
             >
               <GitHubIcon className="h-4 w-4" />
               GitHub
@@ -122,7 +140,7 @@ export function Navbar() {
             <Link
               href="/contribute"
               onClick={() => setOpen(false)}
-              className="mt-1 flex items-center justify-center rounded-lg bg-gradient-to-r from-accent to-accent-3 px-3 py-2.5 text-sm font-medium text-background"
+              className="mt-1 flex items-center justify-center rounded-lg bg-gradient-to-r from-accent to-accent-3 px-3 py-2.5 text-sm font-medium text-background shadow-[inset_0_1px_0_rgba(255,255,255,0.35)]"
             >
               Get involved
             </Link>
