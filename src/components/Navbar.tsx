@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { nav, site } from "@/lib/site";
-import { GitHubIcon } from "./icons";
+import { DiscordIcon, GitHubIcon } from "./icons";
 
 // The "Get involved" pill already links to /contribute, so the plain tab
 // would just repeat it — keep it out of the nav bar (it still appears in
@@ -70,16 +70,25 @@ export function Navbar() {
           </nav>
         </div>
 
-        <div className="hidden items-center gap-3 md:flex">
-          <span className="h-6 w-px bg-border-strong" aria-hidden="true" />
+        <div className="hidden items-center gap-2 md:flex">
+          <span className="mr-1 h-6 w-px bg-border-strong" aria-hidden="true" />
           <a
             href={site.githubOrg}
             target="_blank"
             rel="noreferrer noopener"
-            className="flex items-center gap-2 rounded-full border border-border-strong px-4 py-2 text-sm font-medium text-muted transition-colors hover:border-accent/60 hover:bg-background-elevated-2 hover:text-foreground"
+            aria-label="Noctillio AI on GitHub"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-border-strong text-muted transition-colors hover:border-accent/60 hover:bg-background-elevated-2 hover:text-foreground"
           >
             <GitHubIcon className="h-4 w-4" />
-            GitHub
+          </a>
+          <a
+            href={site.discord}
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Noctillio AI on Discord"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-border-strong text-muted transition-colors hover:border-accent/60 hover:bg-background-elevated-2 hover:text-foreground"
+          >
+            <DiscordIcon className="h-4 w-4" />
           </a>
           <Link
             href="/contribute"
@@ -122,28 +131,44 @@ export function Navbar() {
                     : "text-muted hover:text-foreground"
                 }`}
               >
-                {pathname === item.href && (
-                  <span className="h-1 w-1 rounded-full bg-accent shadow-[0_0_6px_rgba(95,145,251,0.9)]" />
-                )}
+                <span
+                  className={`h-1 w-1 flex-shrink-0 rounded-full bg-accent shadow-[0_0_6px_rgba(95,145,251,0.9)] transition-opacity ${
+                    pathname === item.href ? "opacity-100" : "opacity-0"
+                  }`}
+                  aria-hidden="true"
+                />
                 {item.label}
               </Link>
             ))}
-            <a
-              href={site.githubOrg}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="mt-2 flex items-center gap-2 rounded-lg border border-border-strong px-3 py-2.5 text-sm font-medium text-muted transition-colors hover:border-accent/60 hover:text-foreground"
-            >
-              <GitHubIcon className="h-4 w-4" />
-              GitHub
-            </a>
-            <Link
-              href="/contribute"
-              onClick={() => setOpen(false)}
-              className="mt-1 flex items-center justify-center rounded-lg bg-gradient-to-r from-accent to-accent-3 px-3 py-2.5 text-sm font-medium text-background shadow-[inset_0_1px_0_rgba(255,255,255,0.35)]"
-            >
-              Get involved
-            </Link>
+            <div className="mt-3 border-t border-border pt-3">
+              <div className="flex items-center justify-center gap-3">
+                <a
+                  href={site.githubOrg}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  aria-label="Noctillio AI on GitHub"
+                  className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-border-strong text-muted transition-colors hover:border-accent/60 hover:text-foreground"
+                >
+                  <GitHubIcon className="h-4 w-4" />
+                </a>
+                <a
+                  href={site.discord}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  aria-label="Noctillio AI on Discord"
+                  className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-border-strong text-muted transition-colors hover:border-accent/60 hover:text-foreground"
+                >
+                  <DiscordIcon className="h-4 w-4" />
+                </a>
+              </div>
+              <Link
+                href="/contribute"
+                onClick={() => setOpen(false)}
+                className="mt-3 flex items-center justify-center rounded-full bg-gradient-to-r from-accent to-accent-3 px-3 py-2.5 text-sm font-medium text-background shadow-[inset_0_1px_0_rgba(255,255,255,0.35)]"
+              >
+                Get involved
+              </Link>
+            </div>
           </nav>
         </div>
       )}
