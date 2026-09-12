@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { nav, site, projects } from "@/lib/site";
-import { DiscordIcon, GitHubIcon, LinkedInIcon } from "./icons";
+import { DiscordIcon, GitHubIcon } from "./icons";
 
 export function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="border-t border-border bg-[#050609]">
       <div className="mx-auto max-w-6xl px-6 py-14">
-        <div className="flex flex-col gap-10 md:grid md:grid-cols-[1.3fr_1fr_1fr_1fr]">
+        <div className="flex flex-col gap-10 md:grid md:grid-cols-[1.5fr_1fr_1fr]">
           <div>
             <Link href="/" className="flex items-center gap-2.5">
               <Image
@@ -31,7 +31,7 @@ export function Footer() {
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label="Noctillio AI on GitHub"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-border-strong text-muted transition-colors hover:border-accent/60 hover:text-foreground"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-border-strong text-muted transition-all hover:-translate-y-0.5 hover:border-accent/60 hover:text-foreground"
               >
                 <GitHubIcon className="h-4 w-4" />
               </a>
@@ -40,14 +40,14 @@ export function Footer() {
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label="Noctillio AI on Discord"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-border-strong text-muted transition-colors hover:border-accent/60 hover:text-foreground"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-border-strong text-muted transition-all hover:-translate-y-0.5 hover:border-accent/60 hover:text-foreground"
               >
                 <DiscordIcon className="h-4 w-4" />
               </a>
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 md:contents">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-8 md:contents">
             <div>
               <p className="text-xs font-semibold uppercase tracking-wider text-muted-2">
                 Site
@@ -82,41 +82,12 @@ export function Footer() {
                 ))}
               </ul>
             </div>
-
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-wider text-muted-2">
-                Leadership
-              </p>
-              <ul className="mt-4 space-y-2.5">
-                <li>
-                  <a
-                    href="https://theja-vanka.github.io/"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="text-sm text-muted transition-colors hover:text-foreground"
-                  >
-                    Krishnatheja Vanka
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.linkedin.com/in/krishnatheja-vanka/"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-foreground"
-                  >
-                    <LinkedInIcon className="h-3.5 w-3.5" />
-                    LinkedIn
-                  </a>
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-3 border-t border-border pt-6 text-xs text-muted-2 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {year} Noctillio AI. Open source under each project&apos;s own license.</p>
-          <p>Founded &amp; led by Krishnatheja Vanka.</p>
+        <div className="mt-12 space-y-1 border-t border-border pt-6 text-center text-xs text-muted-2">
+          <p>© {year} Noctillio AI.</p>
+          <p>Open source under each project&apos;s own license.</p>
         </div>
       </div>
     </footer>
