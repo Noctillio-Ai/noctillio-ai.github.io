@@ -2,8 +2,8 @@
 
 The site for **Noctillio AI** — an open-source community building tools for
 deep learning: image processing, video processing, model training, and VLM
-fine-tuning. Highlights [AutoTimm](https://theja-vanka.github.io/AutoTimm/)
-and [NightFlow](https://theja-vanka.github.io/NightFlow/).
+fine-tuning. Highlights [AutoTimm](https://noctillio-ai.github.io/AutoTimm/)
+and [NightFlow](https://noctillio-ai.github.io/NightFlow/).
 
 Built with [Next.js](https://nextjs.org) (App Router) and [Tailwind CSS](https://tailwindcss.com),
 exported as static HTML for GitHub Pages.
